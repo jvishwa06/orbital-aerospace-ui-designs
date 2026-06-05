@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0d0e13",
+              "inverse-on-surface": "#2f3036",
+              "on-surface-variant": "#bec7d4",
+              "surface-variant": "#34343a",
+              "tertiary-fixed": "#ffdbce",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#98cbff",
+              "on-secondary-container": "#b8b8b8",
+              "inverse-primary": "#00629d",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container": "#1e1f25",
+              "on-secondary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#c6c6c6",
+              "background": "#121318",
+              "on-tertiary": "#5a1b00",
+              "on-primary-fixed-variant": "#004a77",
+              "error": "#ffb4ab",
+              "tertiary-container": "#ff7134",
+              "outline-variant": "#3f4852",
+              "on-tertiary-container": "#601e00",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#802a00",
+              "surface-dim": "#121318",
+              "surface": "#121318",
+              "on-surface": "#e3e1e9",
+              "surface-container-high": "#292a2f",
+              "primary-fixed": "#cfe5ff",
+              "surface-tint": "#98cbff",
+              "on-primary-fixed": "#001d33",
+              "secondary": "#c6c6c6",
+              "secondary-container": "#484949",
+              "tertiary": "#ffb59a",
+              "surface-container-low": "#1a1b21",
+              "on-tertiary-fixed": "#370e00",
+              "inverse-surface": "#e3e1e9",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb59a",
+              "on-primary": "#003354",
+              "on-background": "#e3e1e9",
+              "outline": "#88919d",
+              "surface-container-highest": "#34343a",
+              "secondary-fixed": "#e3e2e2",
+              "on-secondary": "#2f3131",
+              "primary-container": "#00a3ff",
+              "primary": "#98cbff",
+              "on-primary-container": "#00375a",
+              "surface-bright": "#38393f"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .flicker-on-focus:active {
+            animation: flicker 0.1s;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        .tonal-shift {
+            transition: background-color 0.3s ease;
+        }
+        .glass-panel {
+            background: rgba(52, 52, 58, 0.4);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 w-full bg-slate-950/40 backdrop-blur-xl border-b border-blue-500/15 shadow-[0_0_40px_rgba(18,19,24,0.5)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-400 dark:text-blue-300 font-['Space_Grotesk'] uppercase">ORBITAL AEROSPACE</span>
+<div class="hidden md:flex gap-6">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../fleet_catalog_updated/code.html">Fleet</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../missions_orbital_aerospace_updated/code.html">Missions</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../technology_orbital_aerospace_updated/code.html">Technology</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-xs text-blue-400 border-b-2 border-blue-400 pb-1" href="../launch_centers_global_network/code.html">Launch Centers</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../news_media_hub/code.html">News</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-tertiary-container text-on-tertiary-container px-4 py-2 text-xs font-bold tracking-widest uppercase hover:brightness-110 transition-all flicker-on-focus">
+                MISSION CONTROL
+            </button>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-blue-400 cursor-pointer p-2 hover:bg-blue-500/10 rounded-full transition-all">account_circle</span>
+<span class="material-symbols-outlined text-blue-400 cursor-pointer p-2 hover:bg-blue-500/10 rounded-full transition-all">rocket_launch</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<header class="mb-20 relative">
+<div class="absolute -left-12 -top-12 opacity-10">
+<span class="font-headline text-[12rem] leading-none font-bold tracking-tighter text-on-surface select-none">SITE-OP</span>
+</div>
+<div class="relative z-10">
+<span class="font-label text-primary tracking-[0.3rem] uppercase mb-4 block">Global Presence</span>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter max-w-4xl mb-6">
+                    ORBITAL <span class="text-primary">LAUNCH</span> NETWORK
+                </h1>
+<p class="font-body text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                    A distributed constellation of heavy-lift facilities providing 24/7 access to all orbital inclinations. Real-time telemetry from every pad.
+                </p>
+</div>
+</header>
+<!-- World Visualization Map Container -->
+<section class="mb-24">
+<div class="w-full h-[500px] bg-surface-container-low relative overflow-hidden group">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<img alt="Global Network Map" class="w-full h-full object-cover grayscale opacity-60 mix-blend-screen" data-alt="high contrast dark satellite view of earth at night with glowing city lights and atmospheric blue lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnt0ZEGzLsAQdvB8VSGDSmkwMhwVSR8lFAOkyMB8ejsmFn_C9-NcJ9rRk8m9YFefxpEdQURtwqdCF2osdW_gFXEvby1kkHufMFw2gU7yFzZn685Zp6FJBp1XUG5IVAOFFaJTTdDPl8PU2zG-9BfS3fcpiX-qWzPqxarNgvQZPBnEbPUFlagNYL498Tng7yXU2WWBFTohc-WH5poL74stgoTAPSgVsw7w-38_pnBkvFLouvCQH4LbWAqXzXbSb1mT-vRo3uRjMiwk02"/>
+<!-- Map UI Overlays -->
+<div class="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-highest/80 backdrop-blur-md p-4 border-l-2 border-primary">
+<span class="font-label text-[10px] uppercase text-primary mb-1 block">Live Tracking</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-headline text-lg font-bold">12 ACTIVE SITES ONLINE</span>
+</div>
+</div>
+<div class="flex gap-4 pointer-events-auto">
+<button class="glass-panel p-2 hover:bg-surface-bright transition-colors"><span class="material-symbols-outlined">zoom_in</span></button>
+<button class="glass-panel p-2 hover:bg-surface-bright transition-colors"><span class="material-symbols-outlined">zoom_out</span></button>
+<button class="glass-panel p-2 hover:bg-surface-bright transition-colors"><span class="material-symbols-outlined">layers</span></button>
+</div>
+</div>
+</div>
+<!-- Interactive Map Pins -->
+<div class="absolute top-[35%] left-[22%] group/pin cursor-pointer pointer-events-auto">
+<div class="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-[0_0_15px_#98cbff]"></div>
+<div class="absolute top-6 left-0 glass-panel p-3 border-l-2 border-primary min-w-[150px] opacity-0 group-hover/pin:opacity-100 transition-all -translate-y-2 group-hover/pin:translate-y-0">
+<span class="font-label text-[10px] text-primary">USA</span>
+<div class="font-headline font-bold text-sm">MERRITT ISLAND</div>
+</div>
+</div>
+<div class="absolute top-[55%] left-[38%] group/pin cursor-pointer pointer-events-auto">
+<div class="w-4 h-4 rounded-full bg-tertiary border-4 border-background shadow-[0_0_15px_#ffb59a]"></div>
+<div class="absolute top-6 left-0 glass-panel p-3 border-l-2 border-tertiary min-w-[150px] opacity-0 group-hover/pin:opacity-100 transition-all -translate-y-2 group-hover/pin:translate-y-0">
+<span class="font-label text-[10px] text-tertiary">FRENCH GUIANA</span>
+<div class="font-headline font-bold text-sm">KOUROU CENTRE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Facility Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-0 bg-outline-variant/15">
+<!-- Site 1: Merritt Island -->
+<article class="bg-surface-container-low p-8 group hover:bg-surface-container transition-all duration-500">
+<div class="flex justify-between items-start mb-12">
+<div>
+<span class="font-label text-[11px] text-outline tracking-widest uppercase block mb-1">USA // LC-39A</span>
+<h3 class="font-headline text-3xl font-bold tracking-tight">MERRITT ISLAND</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[10px] text-primary">STATUS</span>
+<span class="font-headline font-bold text-primary">GO FOR LAUNCH</span>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Tech Specs -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Current Weather</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">wb_sunny</span>
+<span class="font-headline text-xl font-medium">28°C</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-body">Winds: 5.2 km/h SE</span>
+</div>
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Facility Status</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+<span class="font-headline text-xl font-medium text-primary">GREEN</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-body">All Systems Nominal</span>
+</div>
+</div>
+<!-- Mission Card -->
+<div class="bg-surface-container-highest p-6 relative overflow-hidden">
+<div class="relative z-10">
+<span class="font-label text-[10px] text-tertiary uppercase block mb-2">NEXT SCHEDULED LAUNCH</span>
+<div class="font-headline text-2xl font-black mb-1">NOVA-7 MISSION</div>
+<div class="font-body text-xs text-on-surface-variant mb-4">NET: DEC 14, 14:30 UTC</div>
+<button class="w-full bg-outline-variant/30 hover:bg-primary/20 text-on-surface text-[10px] font-bold tracking-[0.2rem] py-3 uppercase transition-all">
+                                VIEW FLIGHT PROFILE
+                            </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">rocket</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Site 2: Kourou -->
+<article class="bg-surface-container-low p-8 group hover:bg-surface-container transition-all duration-500 border-x border-outline-variant/10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<span class="font-label text-[11px] text-outline tracking-widest uppercase block mb-1">GUIANA // ELA-4</span>
+<h3 class="font-headline text-3xl font-bold tracking-tight">KOUROU SPACE</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[10px] text-primary">STATUS</span>
+<span class="font-headline font-bold text-primary">ACTIVE OPS</span>
+</div>
+</div>
+<div class="space-y-8">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Current Weather</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-xl">cloud</span>
+<span class="font-headline text-xl font-medium">31°C</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-body">Humidity: 88%</span>
+</div>
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Facility Status</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">sensors</span>
+<span class="font-headline text-xl font-medium text-primary">GREEN</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-body">Cryo-Load in Progress</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 relative overflow-hidden">
+<div class="relative z-10">
+<span class="font-label text-[10px] text-tertiary uppercase block mb-2">NEXT SCHEDULED LAUNCH</span>
+<div class="font-headline text-2xl font-black mb-1">VEGA-C L22</div>
+<div class="font-body text-xs text-on-surface-variant mb-4">NET: DEC 18, 04:12 UTC</div>
+<button class="w-full bg-outline-variant/30 hover:bg-primary/20 text-on-surface text-[10px] font-bold tracking-[0.2rem] py-3 uppercase transition-all">
+                                VIEW FLIGHT PROFILE
+                            </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">satellite_alt</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Site 3: Mahia -->
+<article class="bg-surface-container-low p-8 group hover:bg-surface-container transition-all duration-500">
+<div class="flex justify-between items-start mb-12">
+<div>
+<span class="font-label text-[11px] text-outline tracking-widest uppercase block mb-1">NZ // LC-1</span>
+<h3 class="font-headline text-3xl font-bold tracking-tight">MAHIA PENIN.</h3>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label text-[10px] text-tertiary">STATUS</span>
+<span class="font-headline font-bold text-tertiary">SCRUB WATCH</span>
+</div>
+</div>
+<div class="space-y-8">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Current Weather</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-xl">air</span>
+<span class="font-headline text-xl font-medium text-error">14°C</span>
+</div>
+<span class="text-[10px] text-error font-body">High Winds: 45km/h</span>
+</div>
+<div class="bg-surface-container-high p-4">
+<span class="font-label text-[9px] text-outline uppercase block mb-1">Facility Status</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-xl">warning</span>
+<span class="font-headline text-xl font-medium text-tertiary">ORANGE</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-body">Pad Secure - Holding</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 relative overflow-hidden">
+<div class="relative z-10">
+<span class="font-label text-[10px] text-tertiary uppercase block mb-2">NEXT SCHEDULED LAUNCH</span>
+<div class="font-headline text-2xl font-black mb-1">ELECTRON R-30</div>
+<div class="font-body text-xs text-on-surface-variant mb-4">T-MINUS: 04:22:15</div>
+<button class="w-full bg-tertiary-container/80 hover:bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-[0.2rem] py-3 uppercase transition-all">
+                                LIVE FEED
+                            </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Technical Specs & Protocols Section -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4 bg-surface-container-low p-8 border-l-4 border-primary">
+<h4 class="font-headline text-xl font-bold mb-6">FACILITY PROTOCOLS</h4>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="text-primary font-headline font-bold">01</span>
+<div>
+<span class="font-label text-[10px] uppercase block text-on-surface-variant">Range Safety</span>
+<p class="text-sm font-body">Automated flight termination systems operational across all sectors.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-primary font-headline font-bold">02</span>
+<div>
+<span class="font-label text-[10px] uppercase block text-on-surface-variant">Telemetry Relay</span>
+<p class="text-sm font-body">Satellite downlink synced with global Orbital Cloud nodes.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="text-primary font-headline font-bold">03</span>
+<div>
+<span class="font-label text-[10px] uppercase block text-on-surface-variant">Payload Processing</span>
+<p class="text-sm font-body">ISO 5 (Class 100) vertical integration hangars available on-site.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="md:col-span-8 relative min-h-[400px]">
+<img alt="Launch Facility Detail" class="w-full h-full object-cover grayscale opacity-80" data-alt="dramatic wide angle shot of a massive rocket launch pad structure at dusk with floodlights creating sharp shadows and blue haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx9Ccq_KjcBoOBlxildmKxnEWdtVi8-dvNVc_jUUu8BGenP1jnIAJ9ot3oRzn0NFz4VwkFTJOSuVkHoOv9vfVZNJ5KIDsflbUU5IfydZkWs3SW7F5M2C2ZR21EGXB-tlXPhBP6CVXOC4OLoq1_5LDzB_CU62ropWbto8jF2Y0B2mmUNCwHQMzYBxRYiupM9ZbZyYgHQM6L-HUv-YAP0-I7LVV0vhooLjMgxSZcqjrQHwiuvjQiZdiB4ZGSYUmw_vZK__gDF7GPmPYd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div class="glass-panel p-6 max-w-sm">
+<span class="font-label text-[10px] text-primary tracking-widest uppercase mb-2 block">Facility Highlight</span>
+<h5 class="font-headline text-2xl font-bold mb-2">HORIZONTAL INTEGRATION</h5>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">Our modular approach to vehicle stacking reduces turn-around time by 40%, allowing for unprecedented launch cadence across the network.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-headline text-5xl font-black text-outline/20">39A</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-blue-900/30 bg-slate-950 mt-24">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-16 max-w-full">
+<div class="col-span-2 md:col-span-1">
+<span class="text-lg font-black text-slate-200 font-headline uppercase mb-4 block">ORBITAL AEROSPACE</span>
+<p class="text-slate-500 font-body text-sm max-w-xs">Expanding human presence across the solar system through reliable orbital delivery.</p>
+</div>
+<div>
+<h5 class="font-label text-[11px] text-blue-400 uppercase tracking-widest mb-6">Quicklinks</h5>
+<nav class="flex flex-col gap-4">
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide" href="#">Fleet Overview</a>
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide" href="#">Mission Briefings</a>
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide" href="#">Tech Specs</a>
+</nav>
+</div>
+<div>
+<h5 class="font-label text-[11px] text-blue-400 uppercase tracking-widest mb-6">Resources</h5>
+<nav class="flex flex-col gap-4">
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide text-blue-400 font-bold" href="#">Launch Protocols</a>
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide" href="#">Press Office</a>
+<a class="text-slate-500 hover:text-orange-400 transition-colors duration-200 font-['Manrope'] text-sm tracking-wide" href="#">Privacy Policy</a>
+</nav>
+</div>
+<div>
+<h5 class="font-label text-[11px] text-blue-400 uppercase tracking-widest mb-6">System Health</h5>
+<div class="bg-surface-container p-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-xs font-bold text-on-surface">ALL SYSTEMS NOMINAL</span>
+</div>
+<span class="text-[10px] text-slate-500">Latency: 24ms // Global Nodes: 12</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-blue-900/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-['Manrope'] text-sm tracking-wide text-slate-500">© 2024 ORBITAL AEROSPACE. ALL SYSTEMS OPERATIONAL.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-blue-400">public</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-blue-400">shield</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-blue-400">monitoring</span>
+</div>
+</div>
+</footer>
+</body></html>

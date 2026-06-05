@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0d0e13",
+              "inverse-on-surface": "#2f3036",
+              "on-surface-variant": "#bec7d4",
+              "surface-variant": "#34343a",
+              "tertiary-fixed": "#ffdbce",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#98cbff",
+              "on-secondary-container": "#b8b8b8",
+              "inverse-primary": "#00629d",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container": "#1e1f25",
+              "on-secondary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#c6c6c6",
+              "background": "#121318",
+              "on-tertiary": "#5a1b00",
+              "on-primary-fixed-variant": "#004a77",
+              "error": "#ffb4ab",
+              "tertiary-container": "#ff7134",
+              "outline-variant": "#3f4852",
+              "on-tertiary-container": "#601e00",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#802a00",
+              "surface-dim": "#121318",
+              "surface": "#121318",
+              "on-surface": "#e3e1e9",
+              "surface-container-high": "#292a2f",
+              "primary-fixed": "#cfe5ff",
+              "surface-tint": "#98cbff",
+              "on-primary-fixed": "#001d33",
+              "secondary": "#c6c6c6",
+              "secondary-container": "#484949",
+              "tertiary": "#ffb59a",
+              "surface-container-low": "#1a1b21",
+              "on-tertiary-fixed": "#370e00",
+              "inverse-surface": "#e3e1e9",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb59a",
+              "on-primary": "#003354",
+              "on-background": "#e3e1e9",
+              "outline": "#88919d",
+              "surface-container-highest": "#34343a",
+              "secondary-fixed": "#e3e2e2",
+              "on-secondary": "#2f3131",
+              "primary-container": "#00a3ff",
+              "primary": "#98cbff",
+              "on-primary-container": "#00375a",
+              "surface-bright": "#38393f"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .flicker-on-focus:active {
+        opacity: 0.7;
+        filter: brightness(1.5);
+      }
+      .glass-panel {
+        background: rgba(52, 52, 58, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .tonal-shift {
+        background: linear-gradient(180deg, #121318 0%, #1a1b21 100%);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 w-full bg-slate-950/40 backdrop-blur-xl border-b border-blue-500/15 shadow-[0_0_40px_rgba(18,19,24,0.5)]">
+<div class="text-xl font-bold tracking-tighter text-blue-400 dark:text-blue-300 font-headline uppercase">
+            ORBITAL AEROSPACE
+        </div>
+<div class="hidden md:flex items-center space-x-10 font-label uppercase tracking-[0.1rem] text-xs">
+<a class="text-slate-400 hover:text-blue-200 transition-colors" href="../fleet_catalog_updated/code.html">Fleet</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors" href="../missions_orbital_aerospace_updated/code.html">Missions</a>
+<a class="text-blue-400 border-b-2 border-blue-400 pb-1" href="../technology_orbital_aerospace_updated/code.html">Technology</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors" href="../launch_centers_global_network/code.html">Launch Centers</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors" href="../news_media_hub/code.html">News</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-blue-400 cursor-pointer hover:bg-blue-500/10 p-2 rounded-full transition-all">account_circle</span>
+<span class="material-symbols-outlined text-blue-400 cursor-pointer hover:bg-blue-500/10 p-2 rounded-full transition-all">rocket_launch</span>
+</div>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 font-headline font-bold text-xs tracking-widest uppercase hover:scale-95 duration-100 flicker-on-focus shadow-[0_0_15px_rgba(255,113,52,0.2)]">
+                MISSION CONTROL
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[819px] flex items-center px-8 md:px-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="high-tech aerospace engine assembly in a dark, blue-lit laboratory with floating dust particles and lens flares" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPxi44JxgQ35CiR6NZOdqYU9wlKCfHIHroBb2EgUXIeAhDMb90VE5uWP66J8a2GQls3AeZICIkYgliuY3LAKObgXFF_8XesaulAiSK4TVEXgqs3-mY0o3QbqDIZ01mxWshlttXL6tI1f1dhAwTrs_zCpm3dYD2olrZ6I79XRAvuaQETMIlWzCwJVdU7tlUnCZRQHtL5j48ZW6N8Fkr4rjxpFxgUVyVi4jUCQSOVyVfKqmh_ThogpMV2_bJVxLQrp-pUlRg-mR9OOEZ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="mb-4 inline-flex items-center space-x-2 text-primary">
+<span class="w-8 h-[1px] bg-primary"></span>
+<span class="font-label text-[10px] tracking-[0.2rem] uppercase">Technical Architecture</span>
+</div>
+<h1 class="font-headline text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
+                    ENGINEERING THE <br/> <span class="text-primary italic">INFINITE.</span>
+</h1>
+<p class="text-on-surface-variant font-body text-lg max-w-xl mb-12 leading-relaxed">
+                    At Orbital Aerospace, we don't just bridge the gap between stars; we redefine the physics of the journey. Explore the core systems powering the next generation of deep-space exploration.
+                </p>
+<div class="flex space-x-6">
+<button class="bg-surface-container-highest border border-outline-variant/30 px-8 py-4 flex items-center space-x-3 group hover:bg-surface-bright transition-all">
+<span class="font-label text-xs uppercase tracking-widest">System Overview</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Propulsion: Vortex Engines -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<div class="md:col-span-5 order-2 md:order-1">
+<div class="bg-surface-container-high p-12 border-l-2 border-primary relative">
+<div class="absolute -top-4 -right-4 font-headline text-6xl opacity-10 font-black">01</div>
+<h2 class="font-headline text-4xl font-bold mb-6 uppercase tracking-tight">Propulsion Systems</h2>
+<h3 class="font-label text-primary text-sm tracking-widest mb-8 uppercase">Vortex Induction Engines</h3>
+<p class="text-on-surface-variant mb-10 leading-relaxed">
+                            Our proprietary Vortex Induction technology utilizes stabilized singularity harmonics to generate thrust without chemical propellants. By manipulating localized gravity wells, we achieve 98.4% efficiency in vacuum environments.
+                        </p>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-label text-[10px] text-secondary uppercase">Thrust Capacity</span>
+<span class="font-headline text-xl text-primary">4.2M Newtons</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-label text-[10px] text-secondary uppercase">Specific Impulse</span>
+<span class="font-headline text-xl text-primary">12,500s</span>
+</div>
+</div>
+<button class="mt-12 w-full py-4 border border-outline-variant/50 font-label text-xs tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center space-x-3">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download Propulsion Brief (PDF)</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="relative aspect-video glass-panel overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover opacity-60" data-alt="abstract circular light patterns resembling a futuristic spacecraft engine glowing with intense blue plasma energy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMUY9vPelowXJ6r0mzBMMjdeVYk5vROCDmK2zGOXM0Y7fghlgYSu0PXZa2cJh5BivOCy3DPit5XJY40y4tyMb56LUbFWIfmFgirV43bgO27iqraPeCG1YFusk20KBZ_p0Bq9bqOY1gpUnuZPrYSEZ1gWOmHGaW1emxLBBpQLeMNJyDu-0CudVNjpsfcOODycFFa-Jh_aDwfdXZdCrWmVk4JdbuNW7ZveEEZLH9caBtnFy_iOvw9xYbj1MZcj8SrVPejdzSeHFcxdPW"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full px-12">
+<div class="grid grid-cols-4 gap-4">
+<div class="h-32 border border-primary/20 bg-primary/5 flex flex-col justify-end p-4">
+<div class="w-full bg-primary h-1 animate-pulse"></div>
+<span class="text-[8px] font-label mt-2 opacity-50">CORE_STABILITY</span>
+</div>
+<div class="h-48 border border-primary/20 bg-primary/5 flex flex-col justify-end p-4">
+<div class="w-full bg-primary h-2/3"></div>
+<span class="text-[8px] font-label mt-2 opacity-50">THRUST_VECTOR</span>
+</div>
+<div class="h-24 border border-primary/20 bg-primary/5 flex flex-col justify-end p-4">
+<div class="w-full bg-primary h-1/4"></div>
+<span class="text-[8px] font-label mt-2 opacity-50">TEMP_RAD</span>
+</div>
+<div class="h-40 border border-primary/20 bg-primary/5 flex flex-col justify-end p-4">
+<div class="w-full bg-primary h-1/2"></div>
+<span class="text-[8px] font-label mt-2 opacity-50">ION_FLUX</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Shielding & Command -->
+<section class="py-32 px-8 md:px-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Shielding: Carbon-Kite -->
+<div class="md:col-span-2 bg-surface-container p-12 relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline text-3xl font-bold mb-4 uppercase">Carbon-Kite Shielding</h3>
+<p class="text-on-surface-variant max-w-lg mb-8">
+                            A bio-synthetic mesh that heals in real-time. Designed to withstand micrometeoroid impacts and high-velocity cosmic radiation while maintaining a weight-to-density ratio 400% better than traditional titanium alloys.
+                        </p>
+<div class="flex space-x-12">
+<div>
+<div class="text-tertiary font-headline text-3xl font-bold">12.4mm</div>
+<div class="font-label text-[10px] text-secondary uppercase tracking-widest mt-1">Armor Thickness</div>
+</div>
+<div>
+<div class="text-tertiary font-headline text-3xl font-bold">0.001%</div>
+<div class="font-label text-[10px] text-secondary uppercase tracking-widest mt-1">Radiation Leakage</div>
+</div>
+</div>
+</div>
+<img class="absolute right-0 bottom-0 w-1/2 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" data-alt="microscopic view of a carbon lattice structure with glowing geometric connections and dark metallic texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHWYcsyCPGoUc4vte0JbmptmMOK68xxpEX1pgDGHRE9pDfjo-CtFeK9nUHUzehiRveitvtrzNa2HUgFpiKy6pMe-Xi3ZF47_QJP9ep3RwEo1ZGgjC_YXNUZKwqoUZuht_41clPDgrgKgbdDVcXocMB4Nw3vd58blgUwi5tucaath5XLE-CXlC6QUDeMaCex1oUhnKz4j7dJ2kKrUjn3cTdTuzR9VeH58roVlZyK4HeVWJV06OVdcvLxL9PWG-bC0F1LuGQXWRi_gR"/>
+</div>
+<!-- Technical Brief -->
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between border-t-4 border-tertiary">
+<div>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">shield_with_heart</span>
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">Integrity Protocols</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Access our full safety certification database for Carbon-Kite hulls in LEO and Lunar environments.
+                        </p>
+</div>
+<a class="inline-flex items-center space-x-3 text-tertiary font-label text-[10px] tracking-widest uppercase mt-8 hover:underline" href="#">
+<span>Access Certificates</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Autonomous Command -->
+<div class="bg-surface-container-low p-12 border border-outline-variant/10 md:row-span-2 flex flex-col">
+<h3 class="font-headline text-3xl font-bold mb-4 uppercase">Autonomous Command</h3>
+<p class="text-on-surface-variant mb-12">
+                        AI-driven navigation that processes orbital data 10,000x faster than human reaction time.
+                    </p>
+<div class="flex-grow flex flex-col justify-center space-y-4">
+<div class="h-1 bg-primary/20 w-full relative">
+<div class="absolute inset-0 bg-primary w-2/3 shadow-[0_0_10px_#98cbff]"></div>
+</div>
+<div class="flex justify-between font-label text-[8px] opacity-60">
+<span>TRAJECTORY CALCULATED</span>
+<span>67% COMPLETE</span>
+</div>
+<div class="mt-8 p-6 glass-panel rounded-lg border border-primary/20">
+<div class="flex items-center space-x-3 mb-4">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="font-label text-[10px] uppercase">Neural Pathfinding Active</span>
+</div>
+<div class="text-xs font-body opacity-80 leading-relaxed">
+                                System executing course correction for Saturn transit via Titan gravity assist.
+                            </div>
+</div>
+</div>
+</div>
+<!-- Neural Core (Section 4) -->
+<div class="md:col-span-2 bg-slate-900/50 p-12 flex items-center justify-between group">
+<div class="max-w-md">
+<h3 class="font-headline text-3xl font-bold mb-4 uppercase">Neural Core</h3>
+<p class="text-on-surface-variant mb-6">
+                            The central nervous system of our fleet. Quantum-linked processors that maintain synchronization across light-years.
+                        </p>
+<button class="bg-primary text-on-primary px-8 py-3 font-headline text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-colors">
+                            Explore Connectivity
+                        </button>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-[120px] text-primary/10 group-hover:text-primary/30 transition-colors duration-500">memory</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Briefs Download Section -->
+<section class="py-24 px-8 md:px-24 bg-surface-container-low border-y border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-bold mb-4 uppercase tracking-tighter">Technical Archive</h2>
+<p class="text-on-surface-variant">Access the complete engineering documentation for our current technology stack.</p>
+</div>
+<div class="flex flex-wrap gap-4 justify-center">
+<div class="bg-surface-container-high px-6 py-4 flex items-center space-x-4 border border-outline-variant/30 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">description</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest">PROPULSION_V4.PDF</span>
+<span class="text-[9px] opacity-50">12.4 MB</span>
+</div>
+</div>
+<div class="bg-surface-container-high px-6 py-4 flex items-center space-x-4 border border-outline-variant/30 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">analytics</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest">SHIELD_SPECS.XLS</span>
+<span class="text-[9px] opacity-50">4.1 MB</span>
+</div>
+</div>
+<div class="bg-surface-container-high px-6 py-4 flex items-center space-x-4 border border-outline-variant/30 hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">schema</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-widest">NEURAL_MAP.CAD</span>
+<span class="text-[9px] opacity-50">88.2 MB</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-blue-900/30 bg-slate-950">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-16 max-w-full tonal-shift">
+<div class="col-span-2 md:col-span-1">
+<div class="text-lg font-black text-slate-200 mb-6 font-headline">ORBITAL AEROSPACE</div>
+<p class="text-slate-500 font-body text-xs leading-relaxed max-w-xs">
+                    Pioneering the next frontier of human expansion through relentless engineering and atmospheric precision.
+                </p>
+</div>
+<div>
+<h5 class="font-label text-blue-400 text-xs tracking-widest uppercase mb-6">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors text-sm hover:translate-x-1 inline-block duration-200" href="#">Fleet Overview</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors text-sm hover:translate-x-1 inline-block duration-200" href="#">Mission Briefings</a></li>
+<li><a class="text-blue-400 font-bold text-sm hover:translate-x-1 inline-block duration-200" href="#">Tech Specs</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label text-blue-400 text-xs tracking-widest uppercase mb-6">Protocols</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors text-sm hover:translate-x-1 inline-block duration-200" href="#">Launch Protocols</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors text-sm hover:translate-x-1 inline-block duration-200" href="#">Press Office</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors text-sm hover:translate-x-1 inline-block duration-200" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label text-blue-400 text-xs tracking-widest uppercase mb-6">Contact</h5>
+<p class="text-slate-500 text-sm mb-4">Command Center: Houston, TX</p>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">satellite_alt</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-blue-900/10 flex justify-between items-center text-[10px] font-label tracking-[0.1rem] text-slate-600">
+<span>© 2024 ORBITAL AEROSPACE. ALL SYSTEMS OPERATIONAL.</span>
+<span class="text-green-500/50">SYSTEM STATUS: NOMINAL</span>
+</div>
+</footer>
+</body></html>

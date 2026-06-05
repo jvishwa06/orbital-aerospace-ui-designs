@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORBITAL AEROSPACE | Mission Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0d0e13",
+              "inverse-on-surface": "#2f3036",
+              "on-surface-variant": "#bec7d4",
+              "surface-variant": "#34343a",
+              "tertiary-fixed": "#ffdbce",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#98cbff",
+              "on-secondary-container": "#b8b8b8",
+              "inverse-primary": "#00629d",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container": "#1e1f25",
+              "on-secondary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#c6c6c6",
+              "background": "#121318",
+              "on-tertiary": "#5a1b00",
+              "on-primary-fixed-variant": "#004a77",
+              "error": "#ffb4ab",
+              "tertiary-container": "#ff7134",
+              "outline-variant": "#3f4852",
+              "on-tertiary-container": "#601e00",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#802a00",
+              "surface-dim": "#121318",
+              "surface": "#121318",
+              "on-surface": "#e3e1e9",
+              "surface-container-high": "#292a2f",
+              "primary-fixed": "#cfe5ff",
+              "surface-tint": "#98cbff",
+              "on-primary-fixed": "#001d33",
+              "secondary": "#c6c6c6",
+              "secondary-container": "#484949",
+              "tertiary": "#ffb59a",
+              "surface-container-low": "#1a1b21",
+              "on-tertiary-fixed": "#370e00",
+              "inverse-surface": "#e3e1e9",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb59a",
+              "on-primary": "#003354",
+              "on-background": "#e3e1e9",
+              "outline": "#88919d",
+              "surface-container-highest": "#34343a",
+              "secondary-fixed": "#e3e2e2",
+              "on-secondary": "#2f3131",
+              "primary-container": "#00a3ff",
+              "primary": "#98cbff",
+              "on-primary-container": "#00375a",
+              "surface-bright": "#38393f"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(52, 54, 58, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .flicker-on-focus:focus {
+        animation: flicker 0.1s ease-in-out;
+      }
+      @keyframes flicker {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.8; }
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl border-b border-blue-500/15 shadow-[0_0_40px_rgba(18,19,24,0.5)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-400 dark:text-blue-300 font-headline">ORBITAL AEROSPACE</span>
+<div class="hidden lg:flex gap-6">
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../fleet_catalog_updated/code.html">Fleet</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-blue-400 border-b-2 border-blue-400 pb-1" href="../mission_control_dashboard_updated/code.html">Missions</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../technology_orbital_aerospace_updated/code.html">Technology</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../launch_centers_global_network/code.html">Launch Centers</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../news_media_hub/code.html">News</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 text-xs font-headline font-bold uppercase tracking-widest rounded-sm hover:opacity-90 transition-all active:scale-95">MISSION CONTROL</button>
+<div class="flex gap-4 text-blue-400">
+<span class="material-symbols-outlined cursor-pointer hover:bg-blue-500/10 p-2 rounded-full transition-all">account_circle</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-blue-500/10 p-2 rounded-full transition-all">rocket_launch</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-[1600px] mx-auto">
+<!-- Dashboard Header -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<span class="font-label text-primary text-xs tracking-[0.2rem] uppercase">Command Interface v4.2.0</span>
+<h1 class="font-headline text-5xl font-bold tracking-tight text-on-surface">Mission Dashboard</h1>
+</div>
+<div class="flex gap-4 items-center bg-surface-container-low p-4 rounded-sm border border-outline-variant/15">
+<div class="text-right">
+<p class="font-label text-[10px] text-outline uppercase tracking-wider">System Status</p>
+<p class="text-primary font-headline font-medium">ALL SYSTEMS OPERATIONAL</p>
+</div>
+<div class="w-3 h-3 bg-primary rounded-full animate-pulse shadow-[0_0_10px_#98cbff]"></div>
+</div>
+</div>
+</header>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="bg-surface-container-low p-8 border-l-4 border-primary group hover:bg-surface-container transition-colors">
+<p class="font-label text-xs text-outline uppercase tracking-widest mb-4">Active Reservations</p>
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-headline font-bold text-on-surface">04</span>
+<span class="text-primary text-sm font-medium">L-Minus Ready</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 border-l-4 border-tertiary group hover:bg-surface-container transition-colors">
+<p class="font-label text-xs text-outline uppercase tracking-widest mb-4">Next Launch Window</p>
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-headline font-bold text-on-surface">18:42:04</span>
+<span class="text-tertiary text-sm font-medium uppercase tracking-tighter">T-Countdown</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 border-l-4 border-secondary group hover:bg-surface-container transition-colors">
+<p class="font-label text-xs text-outline uppercase tracking-widest mb-4">Total Payload Managed</p>
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-headline font-bold text-on-surface">1,240.5</span>
+<span class="text-secondary text-sm font-medium uppercase tracking-tighter">Metric Tons</span>
+</div>
+</div>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Active Missions -->
+<section class="lg:col-span-8 space-y-8">
+<div class="flex items-center justify-between">
+<h2 class="font-headline text-2xl font-bold uppercase tracking-wide">Active Missions</h2>
+<button class="text-xs font-label text-primary hover:underline transition-all">VIEW ARCHIVE</button>
+</div>
+<!-- Mission Card 1 -->
+<div class="bg-surface-container-low p-6 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2">
+<span class="bg-primary/10 text-primary px-3 py-1 text-[10px] font-bold rounded-full border border-primary/20">IN ORBIT</span>
+</div>
+<div class="w-32 h-32 flex-shrink-0 bg-surface-container-highest rounded-sm overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="close up of a modern satellite in earth orbit with golden solar panels reflecting bright sunlight against deep black space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxz7MxJXe9lEZnYKebtrqGOPNexfJWYXBDYAeN1WKBFacFAGg9S9Gx0Dy1KrvR-OT4u7citE-dChHjAaNwxwdWnxzjce2Sne-_QYgHoLSZ9OtIunD8_I3yNCkL-K9g6kqszkD_B5r2JDWgIj62Q0BVLuLI59VBwe-H6s-ZFQlo29SGiQFm4CcI3kHBpr8z522oevnsqPPeol0FM31baHQNG1qVjYGW-7UMuiZAnef5nX35pYy1pN5K-d3zf_0RTeU3B0Zt-zL3VCxK"/>
+</div>
+<div class="flex-grow space-y-4 w-full">
+<div>
+<p class="font-label text-[10px] text-outline uppercase">Mission ID: OA-4429</p>
+<h3 class="font-headline text-xl font-bold">Project Helios - Core Sync</h3>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label uppercase tracking-tighter">
+<span class="text-outline">Deployment Progress</span>
+<span class="text-primary">82%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="h-full bg-primary" style="width: 82%"></div>
+</div>
+</div>
+<div class="flex gap-6">
+<div>
+<p class="text-[10px] text-outline uppercase font-label">Trajectory</p>
+<p class="text-sm font-medium">GEO-Stable</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-label">Telemetry</p>
+<p class="text-sm font-medium text-primary">Stable</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mission Card 2 -->
+<div class="bg-surface-container-low p-6 flex flex-col md:flex-row gap-6 items-center border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 text-[10px] font-bold rounded-full border border-tertiary/20">FINAL PREP</span>
+</div>
+<div class="w-32 h-32 flex-shrink-0 bg-surface-container-highest rounded-sm overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="dramatic low angle shot of a vertical heavy lift rocket on a launch pad at night illuminated by powerful floodlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_XCbY-sxu2S5DjeGAKzIIof7y33AcXDCqhr58mtMMrf_xio3wivkcw9wVQelR3fiqyhVDgc1Xf8Mx7jPcQQyPe-wHcJR_jkH68ar3yxjv1IkroEn8_zUbeNXmWICq_6O6skGCWUmf8di3PBRh_ZNf-Iipdlum8jDIU84zzDAQku3GZSnBhnrOqU2NvVNH0v--lWlnCj1I_DrAa1fveoPXYHMDm4cO9Fw6fYfNN6sf0KqEz4Zn8RPgJq2Zi55zc5RzAK7T9XhLGXoX"/>
+</div>
+<div class="flex-grow space-y-4 w-full">
+<div>
+<p class="font-label text-[10px] text-outline uppercase">Mission ID: OA-5510</p>
+<h3 class="font-headline text-xl font-bold">Lunar Freight - Bulk Load B</h3>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label uppercase tracking-tighter">
+<span class="text-outline">Pre-Launch Checklist</span>
+<span class="text-tertiary">45%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="h-full bg-tertiary" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex gap-6">
+<div>
+<p class="text-[10px] text-outline uppercase font-label">Target</p>
+<p class="text-sm font-medium">Lunar South Pole</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase font-label">Load Weight</p>
+<p class="text-sm font-medium">42.8 MT</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Intel & Resource Center -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Latest Intel Feed -->
+<section class="bg-surface-container-low border border-outline-variant/10 p-6">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-xl">sensors</span>
+<h2 class="font-headline text-lg font-bold uppercase tracking-wider">Latest Intel</h2>
+</div>
+<div class="space-y-6">
+<div class="border-l-2 border-primary/30 pl-4 py-1">
+<p class="text-[10px] text-outline uppercase font-label">08:00 UTC</p>
+<h4 class="text-sm font-bold mb-1">Atmospheric conditions optimal for LC-39</h4>
+<p class="text-xs text-on-surface-variant">Wind shear within tolerance levels for the next 24 hours.</p>
+</div>
+<div class="border-l-2 border-outline-variant/30 pl-4 py-1">
+<p class="text-[10px] text-outline uppercase font-label">Yesterday</p>
+<h4 class="text-sm font-bold mb-1">Orbital Hub Expansion Phase 2 Complete</h4>
+<p class="text-xs text-on-surface-variant">Three new docking ports integrated into the Core Module.</p>
+</div>
+<div class="border-l-2 border-outline-variant/30 pl-4 py-1">
+<p class="text-[10px] text-outline uppercase font-label">Oct 12</p>
+<h4 class="text-sm font-bold mb-1">Star-Mapping Software v5.0 deployed</h4>
+<p class="text-xs text-on-surface-variant">Guidance precision increased by 0.003% for deep space routes.</p>
+</div>
+</div>
+<button class="w-full mt-8 py-3 border border-outline-variant/30 text-[10px] font-label uppercase tracking-widest hover:bg-surface-bright transition-colors">Load More Data</button>
+</section>
+<!-- Resource Center -->
+<section class="bg-surface-container-highest/40 backdrop-blur-md p-6 border border-primary/20">
+<h2 class="font-headline text-lg font-bold uppercase tracking-wider mb-6">Resource Center</h2>
+<div class="grid grid-cols-1 gap-3">
+<a class="flex items-center justify-between p-4 bg-surface-container-low hover:translate-x-1 transition-transform group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">menu_book</span>
+<span class="text-sm font-medium">Protocol Manuals</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-low hover:translate-x-1 transition-transform group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">support_agent</span>
+<span class="text-sm font-medium">Support Uplink</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-low hover:translate-x-1 transition-transform group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">architecture</span>
+<span class="text-sm font-medium">Vessel Tech Specs</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</a>
+</div>
+</section>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full border-t border-blue-900/30">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-16 max-w-full">
+<div class="col-span-2 md:col-span-1 space-y-4">
+<span class="text-lg font-black text-slate-200 font-headline">ORBITAL</span>
+<p class="font-body text-sm tracking-wide text-slate-500 max-w-xs">Pioneering the next century of extra-planetary logistics and tactical orbital superiority.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-xs font-bold text-blue-400 uppercase tracking-widest">Fleet &amp; Ops</h4>
+<ul class="space-y-2 text-slate-500 text-sm font-body">
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Fleet Overview</a></li>
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Mission Briefings</a></li>
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Tech Specs</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-xs font-bold text-blue-400 uppercase tracking-widest">Protocol</h4>
+<ul class="space-y-2 text-slate-500 text-sm font-body">
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Launch Protocols</a></li>
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Press Office</a></li>
+<li><a class="hover:text-orange-400 hover:translate-x-1 duration-200 inline-block transition-all" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline text-xs font-bold text-blue-400 uppercase tracking-widest">Connectivity</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">satellite_alt</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">terminal</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-6 border-t border-blue-900/10 text-center">
+<span class="font-body text-sm tracking-wide text-slate-500 uppercase">© 2024 ORBITAL AEROSPACE. ALL SYSTEMS OPERATIONAL.</span>
+</div>
+</footer>
+</body></html>

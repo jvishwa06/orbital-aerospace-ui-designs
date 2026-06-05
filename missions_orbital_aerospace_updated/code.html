@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0d0e13",
+              "inverse-on-surface": "#2f3036",
+              "on-surface-variant": "#bec7d4",
+              "surface-variant": "#34343a",
+              "tertiary-fixed": "#ffdbce",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#98cbff",
+              "on-secondary-container": "#b8b8b8",
+              "inverse-primary": "#00629d",
+              "on-secondary-fixed-variant": "#464747",
+              "surface-container": "#1e1f25",
+              "on-secondary-fixed": "#1a1c1c",
+              "secondary-fixed-dim": "#c6c6c6",
+              "background": "#121318",
+              "on-tertiary": "#5a1b00",
+              "on-primary-fixed-variant": "#004a77",
+              "error": "#ffb4ab",
+              "tertiary-container": "#ff7134",
+              "outline-variant": "#3f4852",
+              "on-tertiary-container": "#601e00",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#802a00",
+              "surface-dim": "#121318",
+              "surface": "#121318",
+              "on-surface": "#e3e1e9",
+              "surface-container-high": "#292a2f",
+              "primary-fixed": "#cfe5ff",
+              "surface-tint": "#98cbff",
+              "on-primary-fixed": "#001d33",
+              "secondary": "#c6c6c6",
+              "secondary-container": "#484949",
+              "tertiary": "#ffb59a",
+              "surface-container-low": "#1a1b21",
+              "on-tertiary-fixed": "#370e00",
+              "inverse-surface": "#e3e1e9",
+              "error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb59a",
+              "on-primary": "#003354",
+              "on-background": "#e3e1e9",
+              "outline": "#88919d",
+              "surface-container-highest": "#34343a",
+              "secondary-fixed": "#e3e2e2",
+              "on-secondary": "#2f3131",
+              "primary-container": "#00a3ff",
+              "primary": "#98cbff",
+              "on-primary-container": "#00375a",
+              "surface-bright": "#38393f"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(52, 52, 58, 0.4);
+        backdrop-filter: blur(20px);
+      }
+      .flicker-on-focus:focus {
+        animation: flicker 0.1s ease-in-out;
+      }
+      @keyframes flicker {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.8; }
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl border-b border-blue-500/15 shadow-[0_0_40px_rgba(18,19,24,0.5)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-400 dark:text-blue-300 font-headline">ORBITAL AEROSPACE</span>
+<div class="hidden md:flex gap-6 items-center h-full">
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../fleet_catalog_updated/code.html">Fleet</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-blue-400 border-b-2 border-blue-400 pb-1" href="../missions_orbital_aerospace_updated/code.html">Missions</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../technology_orbital_aerospace_updated/code.html">Technology</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../launch_centers_global_network/code.html">Launch Centers</a>
+<a class="font-headline uppercase tracking-[0.1rem] text-xs text-slate-400 hover:text-blue-200 transition-colors" href="../news_media_hub/code.html">News</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-high/50 border-b border-outline/30 px-3 py-1">
+<span class="material-symbols-outlined text-sm text-outline mr-2">search</span>
+<input class="bg-transparent border-none text-[10px] tracking-widest font-label focus:ring-0 text-on-surface p-0 w-32" placeholder="COMMAND SEARCH" type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-blue-200 transition-all active:scale-95">account_circle</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-blue-200 transition-all active:scale-95">rocket_launch</button>
+<button class="bg-tertiary-container text-on-tertiary-container font-headline text-[10px] font-bold tracking-[0.2em] px-5 py-2 hover:bg-tertiary transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(255,113,52,0.2)]">MISSION CONTROL</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero / Mission Manifesto -->
+<section class="relative min-h-[921px] flex items-center px-8 md:px-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-60" data-alt="Stunning orbital view of Earth's horizon with glowing atmosphere and deep black space, cinematic aerospace photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKy76akv9IpRb2yAAivPuXpjUeLIO2Y8NFK8nRryv1_bOywfvaocrcQEEFA2Pw0PqztHlYVGGNbYVHDbdnlvomu1tPVjcasTwNKiwOz_iZGgftdO1tq0XCaSJBGv-2OU5nqmvZiLAgOmAfQQpm3-CwRYYGLVvVQz8VZZ2l3p11-465XK_NHIa0bqqJ2XPZFEY_acSdZiutSwAmlO26xW3If_EwJYxrz7xvta1QWw3F0A1Mf0dV4EJlqreIGEJ0E6CZtyTk9vtIXpT_"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<div class="flex items-center gap-4 mb-6">
+<span class="h-[1px] w-12 bg-primary"></span>
+<span class="font-label text-primary text-xs tracking-[0.3em] uppercase">Operations Protocol</span>
+</div>
+<h1 class="font-headline text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[0.9] text-on-surface">
+                    BEYOND THE <br/> <span class="text-primary-fixed-dim">KARMAN LINE.</span>
+</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">
+                        Orbital Aerospace exists to expand the human footprint across the celestial plane. Our missions are not merely logistics; they are the architectural foundations of a multi-planetary civilization.
+                    </p>
+<div class="border-l border-primary/20 pl-8 py-2">
+<div class="mb-4">
+<span class="block font-label text-[10px] text-primary/60 tracking-widest uppercase mb-1">Current Velocity</span>
+<span class="font-headline text-2xl font-light text-on-surface">27,600 KM/H</span>
+</div>
+<div>
+<span class="block font-label text-[10px] text-primary/60 tracking-widest uppercase mb-1">Active Assets</span>
+<span class="font-headline text-2xl font-light text-on-surface">142 ORBITAL UNITS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Mission Status (HUD Style) -->
+<section class="py-24 px-8 md:px-20 bg-surface-container-low">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-3xl font-bold tracking-tighter uppercase mb-2">Live Mission Status</h2>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label text-[10px] tracking-widest text-on-surface-variant">REAL-TIME TELEMETRY FEED ACTIVE</span>
+</div>
+</div>
+<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/20"></div>
+<div class="text-right">
+<span class="font-label text-[10px] text-outline tracking-widest block mb-1">SYSTEM TIME</span>
+<span class="font-headline text-xl text-on-surface tabular-nums">14:22:09 UTC</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Telemetry Card 1 -->
+<div class="glass-panel p-8 border-l border-primary/30 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">satellite_alt</span>
+</div>
+<span class="font-label text-[10px] text-primary tracking-[0.2em] uppercase mb-6 block">Mission: Helios-9</span>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Orbital Decay</span>
+<span class="font-headline text-on-surface">0.002% / YR</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">ALTITUDE</span>
+<span class="text-lg font-headline">402 KM</span>
+</div>
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">TEMP</span>
+<span class="text-lg font-headline">-12°C</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Card 2 -->
+<div class="glass-panel p-8 border-l border-tertiary/30 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">flare</span>
+</div>
+<span class="font-label text-[10px] text-tertiary tracking-[0.2em] uppercase mb-6 block">Mission: Ares-IV Fueling</span>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Propellant Status</span>
+<span class="font-headline text-tertiary">CRITICAL</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-tertiary h-full w-[12%] animate-pulse"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">PRESSURE</span>
+<span class="text-lg font-headline">2,400 PSI</span>
+</div>
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">FLOW</span>
+<span class="text-lg font-headline">0.0 L/S</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Card 3 -->
+<div class="glass-panel p-8 border-l border-on-surface/30 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-6xl">distance</span>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant tracking-[0.2em] uppercase mb-6 block">Mission: Lunar Gateway</span>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Signal Latency</span>
+<span class="font-headline text-on-surface">1.28 SEC</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1">
+<div class="bg-white/20 h-full w-[100%]"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">STRENGTH</span>
+<span class="text-lg font-headline">-84 DBM</span>
+</div>
+<div class="bg-surface-container/50 p-4">
+<span class="block text-[9px] text-outline font-label mb-1">BAND</span>
+<span class="text-lg font-headline">K-BAND</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deployment History (Timeline) -->
+<section class="py-32 px-8 md:px-20 bg-background relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="mb-20 max-w-2xl">
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">DEPLOYMENT HISTORY</h2>
+<p class="text-on-surface-variant">A decade of precision engineering and successful insertions into LEO, MEO, and beyond.</p>
+</div>
+<div class="relative">
+<!-- Central Line -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary via-outline-variant to-transparent"></div>
+<!-- Milestone 1 -->
+<div class="relative mb-24 md:flex justify-between items-center w-full">
+<div class="md:w-[45%] pl-12 md:pl-0 md:text-right mb-8 md:mb-0">
+<span class="font-label text-primary text-xs tracking-[0.2em]">Q1 2024</span>
+<h3 class="font-headline text-2xl font-bold mt-2">PROJECT IRIDIUM-X</h3>
+<p class="text-on-surface-variant text-sm mt-4 leading-relaxed max-w-md md:ml-auto">Deployment of the 4th generation global connectivity mesh, achieving sub-10ms latency across 98% of Earth's surface.</p>
+</div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-background border border-primary flex items-center justify-center rounded-full z-10">
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+<div class="md:w-[45%] pl-12 md:pl-16">
+<div class="bg-surface-container-high aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Heavy lift rocket ascending through clouds with bright orange engine exhaust and sharp metallic details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfWysorvvJiSvEp1ukx32c4n7ehX5CMPTxdcCCAQYy994VVCQqVB2rbW3jqWi_d5qmrUSfS1ZifUW0qVIrIyhkIiNwZ9xx2lYyfbjz13gXuDhBdD6sjQaSm3WG-5MtrEsJaA36J87sk11h-X03jr31GBlgeCrLNvCYDpSM31b_m9u841Ce4qEwyEn8D6Vp1GzUgZHgO36jj3ZQ7q0x_K8Wy5HfYciWxMJ1g8BPdEPqoXDoZvU4mJBL1dy6Rkm-VjN6qMnHTcHmaM_g"/>
+</div>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative mb-24 md:flex flex-row-reverse justify-between items-center w-full">
+<div class="md:w-[45%] pl-12 md:pl-0 mb-8 md:mb-0">
+<span class="font-label text-primary text-xs tracking-[0.2em]">Q3 2023</span>
+<h3 class="font-headline text-2xl font-bold mt-2">DEEP SPACE BEACON</h3>
+<p class="text-on-surface-variant text-sm mt-4 leading-relaxed max-w-md">Activation of the first sustainable navigation buoy at the L2 Lagrange point, enabling future Jovian exploration.</p>
+</div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-background border border-primary flex items-center justify-center rounded-full z-10">
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+<div class="md:w-[45%] pl-12 md:pr-16 text-right">
+<div class="bg-surface-container-high aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Detailed view of space station solar panels and metallic structure against the dark void of deep space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfaUiugfPthfqKRvMIL8hRLQ6qNmYesNARZ7GvGd5MQNGkVIVsqbLzD53C_jOby90DVwLgzwZGifxrjJ3ZDsHj3XoGiRtWRdUWk8W2PLVrWCyzDoQLIbQteWanfUYmd3LsWqOQ3W2_0SPujTYgLEnIh3PN7mMRKjePvIguKZRYmrlIvxe3kH_AnxHZ4vTEtnlcw82BX6y7BvjvqUDHaNFOuBA5B33vfrKAWWKEaah7-65AhSO9ZsbELqPrgvMT5QtsDk_pPPQiNCC"/>
+</div>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative md:flex justify-between items-center w-full">
+<div class="md:w-[45%] pl-12 md:pl-0 md:text-right mb-8 md:mb-0">
+<span class="font-label text-primary text-xs tracking-[0.2em]">YEAR 2022</span>
+<h3 class="font-headline text-2xl font-bold mt-2">ORBITAL RECYCLER V1</h3>
+<p class="text-on-surface-variant text-sm mt-4 leading-relaxed max-w-md md:ml-auto">Initial test flight of our debris reclamation drone, successfully de-orbiting 12 tons of inactive hardware.</p>
+</div>
+<div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-background border border-primary flex items-center justify-center rounded-full z-10">
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+<div class="md:w-[45%] pl-12 md:pl-16">
+<div class="bg-surface-container-high aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Distant galaxies and nebulae with vibrant purple and blue dust clouds across a dark star-filled sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2bbTjq2jHofKh60-VewP1B5msADNrsgNN0UehWcntRD_NdhCOk6Zlv5MZDCnyx7CJQXfzRFInDbAOnK9g6armLDkDGN3H8qzSJSbpmAC5565F6inUZzLmILl7ZhPK2ni-7YxVwOHLLNhP4fwL9KAsSnQshvPe4YFiruQSKCHN6NGhvtlMVA74x17fpFnA4fCU-PYX4rtbI94xhWl7gqIcTN8p8-Xd4tmt2C3DYnNnENZtOUyhhwHxgKOr62SR-IE321kPyNm8mRx9"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 md:px-20 relative bg-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="Deep abstract visualization of a data network in space, glowing blue lines connecting nodes over Earth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo5xKm_QgDtHf1A1iXhoMiCAnrXpU6Ev8UDvYOpfGg09QVkl9nZJGXjGBOYbMIckeLsTwkSB2dJE5WYYrNr_8ftWkhYTIp5Y8xAmt5O9F7QZXSYseX2G1cW42uQ9YcRsyheUBjXgHMMSoczjZIzXlMWCcP6rGnMAiTviguPsSsMKWDmj75hC2davGR3W-30QPTCW8x_KM65PLjKEntNK7t7S-ki4d-cHOelgrJjFkJE6WsN-j1o-esm8vDa4jaJXL_ltrfkMO_57r4"/>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<span class="font-label text-tertiary text-xs tracking-[0.4em] uppercase mb-8 block">Careers in Orbit</span>
+<h2 class="font-headline text-4xl md:text-7xl font-bold tracking-tight mb-10 leading-tight">BECOME A NAVIGATOR</h2>
+<p class="font-body text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto">
+                    We are seeking visionary engineers, mission controllers, and orbital pilots to lead our next phase of expansion. The future is waiting for your command.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-tertiary-container text-on-tertiary-container font-headline px-12 py-5 font-bold tracking-[0.2em] hover:bg-tertiary transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(255,113,52,0.3)]">
+                        APPLY FOR COMMISSION
+                    </button>
+<button class="border border-outline/30 hover:border-primary px-12 py-5 font-headline font-bold tracking-[0.2em] transition-all duration-300">
+                        BROWSE ROLES
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-blue-900/30 bg-slate-950 font-['Manrope'] text-sm tracking-wide">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-16 max-w-full">
+<div class="col-span-2 md:col-span-1">
+<span class="text-lg font-black text-slate-200 block mb-6 font-headline">ORBITAL AEROSPACE</span>
+<p class="text-slate-500 text-xs leading-relaxed max-w-xs">
+                    Advancing human potential through orbital precision and interstellar ambition. All systems nominal.
+                </p>
+</div>
+<div>
+<span class="block text-primary font-bold mb-4 font-headline uppercase text-[10px] tracking-widest">Navigation</span>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors hover:translate-x-1 duration-200 block" href="#">Fleet Overview</a></li>
+<li><a class="text-blue-400 font-bold transition-colors hover:translate-x-1 duration-200 block" href="#">Mission Briefings</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors hover:translate-x-1 duration-200 block" href="#">Tech Specs</a></li>
+</ul>
+</div>
+<div>
+<span class="block text-primary font-bold mb-4 font-headline uppercase text-[10px] tracking-widest">Operations</span>
+<ul class="space-y-3">
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors hover:translate-x-1 duration-200 block" href="#">Launch Protocols</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors hover:translate-x-1 duration-200 block" href="#">Press Office</a></li>
+<li><a class="text-slate-500 hover:text-orange-400 transition-colors hover:translate-x-1 duration-200 block" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<span class="block text-primary font-bold mb-4 font-headline uppercase text-[10px] tracking-widest">Social</span>
+<div class="flex gap-4">
+<a class="material-symbols-outlined text-slate-500 hover:text-orange-400" href="#">public</a>
+<a class="material-symbols-outlined text-slate-500 hover:text-orange-400" href="#">share</a>
+<a class="material-symbols-outlined text-slate-500 hover:text-orange-400" href="#">forum</a>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 tonal-shift bg-slate-900/50 border-t border-blue-900/10">
+<p class="text-[10px] font-label text-slate-500 tracking-[0.2em]">© 2024 ORBITAL AEROSPACE. ALL SYSTEMS OPERATIONAL.</p>
+</div>
+</footer>
+</body></html>
